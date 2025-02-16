@@ -31,7 +31,7 @@
   }
 
   body {
-    @apply bg-[var(--green-1000)] text-[var(--green-50)];
+    @apply bg-[var(--green-1000)] text-white;
     font-family: 'Montserrat', sans-serif;
   }
 
