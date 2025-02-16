@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const SingleItem = ({ id, name, image, banner, artist, idPath }) => {
   return (
-    <a href={`${idPath}/${id}`} className="single-item py-6 px-4 flex flex-col gap-2.5 rounded-[var(--border-radius-l)] items-center transition-colors duration-[var(--transition-duration)] ease-[var(--transition-function)] hover:bg-[var(--green-900)] group">
+    <Link to={`${idPath}/${id}`} className="single-item py-6 px-4 flex flex-col gap-2.5 rounded-[var(--border-radius-l)] items-center transition-colors duration-[var(--transition-duration)] ease-[var(--transition-function)] hover:bg-[var(--green-900)] group">
       <div className="relative">
         <div className="single-item__div-image w-[140px] h-[140px] flex items-center justify-center overflow-hidden rounded-full">
           <img src={image} alt={name} />
@@ -20,7 +21,7 @@ const SingleItem = ({ id, name, image, banner, artist, idPath }) => {
         <p className="single-item__title font-semibold">{name}</p>
         <p className="single-item__type text-sm">{artist ? artist : "Artist"}</p>
       </div>
-    </a>
+    </Link>
   );
 };
 
