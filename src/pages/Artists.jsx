@@ -1,6 +1,8 @@
+import Main from "../components/Main";
+
 const Artists = () => {
     return ( 
-        <div className="artists"></div>
+        <Main type="artists"></Main>
      );
 }
  
