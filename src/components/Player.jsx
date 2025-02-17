@@ -5,12 +5,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const Player = () => {
+const Player = ({ duration, randomIdFromArtist, randomId2FromArtist }) => {
   return (
     <div className="flex flex-col items-center gap-1 justify-self-stretch">
       <div className="flex items-center gap-5 text-2xl">
-        <Link to="/song/1">
+        <Link to={`/song/${randomIdFromArtist}`}>
           <FontAwesomeIcon
             icon={faBackwardStep}
             className="cursor-pointer transition-transform duration-200 ease-in-out hover:scale-105 hover:text-green-500"
@@ -20,7 +21,7 @@ const Player = () => {
           icon={faCirclePlay}
           className="cursor-pointer text-4xl transition-transform duration-200 ease-in-out hover:scale-105 hover:text-green-500"
         />
-        <Link to='/song/3'>
+        <Link to={`/song/${randomId2FromArtist}`}>
           <FontAwesomeIcon
             icon={faForwardStep}
             className="cursor-pointer transition-transform duration-200 ease-in-out hover:scale-105 hover:text-green-500"
@@ -36,10 +37,16 @@ const Player = () => {
             style={{ width: "25%" }}
           ></div>
         </div>
-        <span className="w-11 text-center text-sm">3:30</span>
+        <span className="w-11 text-center text-sm">{duration}</span>
       </div>
     </div>
   );
+};
+
+Player.propTypes = {
+  duration: PropTypes.string.isRequired,
+  randomIdFromArtist: PropTypes.string.isRequired,
+  randomId2FromArtist: PropTypes.string.isRequired,
 };
 
 export default Player;

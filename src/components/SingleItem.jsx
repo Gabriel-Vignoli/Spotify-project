@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const SingleItem = ({ id, name, image, banner, artist, idPath }) => {
+const SingleItem = ({ id, name, image, artist, idPath }) => {
   return (
     <Link to={`${idPath}/${id}`} className="single-item py-6 px-4 flex flex-col gap-2.5 rounded-[var(--border-radius-l)] items-center transition-colors duration-[var(--transition-duration)] ease-[var(--transition-function)] hover:bg-[var(--green-900)] group">
       <div className="relative">
@@ -31,6 +31,7 @@ SingleItem.propTypes = {
   image: PropTypes.string.isRequired,
   banner: PropTypes.string,
   artist: PropTypes.string,
+  idPath: PropTypes.string.isRequired,
 };
 
 export default SingleItem;
