@@ -31,7 +31,7 @@ SongList.propTypes = {
       duration: PropTypes.string.isRequired,
       artist: PropTypes.string.isRequired,
       audio: PropTypes.string.isRequired,
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      _id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     })
   ).isRequired,
 };

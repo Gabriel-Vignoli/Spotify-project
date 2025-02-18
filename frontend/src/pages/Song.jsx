@@ -8,7 +8,7 @@ const Song = () => {
   
   
     const { image, name, duration, artist, audio } = songsArray.filter(
-      (currentSongObj) => currentSongObj.id === Number(id)
+      (currentSongObj) => currentSongObj._id === id
     )[0];
   
     const artistObj = artistArray.filter(
@@ -27,8 +27,8 @@ const Song = () => {
       Math.random() * (songsArrayFromArtist.length - 1)
     );
   
-    const randomIdFromArtist = songsArrayFromArtist[randomIndex].id;
-    const randomId2FromArtist = songsArrayFromArtist[randomIndex2].id;
+    const randomIdFromArtist = songsArrayFromArtist[randomIndex]._id;
+    const randomId2FromArtist = songsArrayFromArtist[randomIndex2]._id;
 
   return (
     <div className="flex flex-col flex-1 h-full">
@@ -43,7 +43,7 @@ const Song = () => {
       </div>
 
       <div className="grid grid-cols-3 place-items-center bg-black text-white p-4 gap-3 h-[15vh]">
-        <Link to={`/artist/${artistObj.id}`} className="justify-self-start">
+        <Link to={`/artist/${artistObj._id}`} className="justify-self-start">
           <img
             src={artistObj.image}
             alt={artistObj.name}

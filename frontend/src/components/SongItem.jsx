@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const SongItem = ({ image, name, duration, artist, audio, id, index }) => {
+const SongItem = ({ image, name, duration, artist, audio, _id, index }) => {
   return (
     <Link
-      to={`/song/${id}`}
+      to={`/song/${_id}`}
       className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-800 transition duration-200"
     >
       <div className="flex items-center gap-4">
@@ -28,7 +28,7 @@ SongItem.propTypes = {
   duration: PropTypes.string.isRequired,
   artist: PropTypes.string.isRequired,
   audio: PropTypes.string.isRequired,
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  _id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   index: PropTypes.number.isRequired,
 };
 
